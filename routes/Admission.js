@@ -1,8 +1,9 @@
 const express = require ('express')
-const router1 = express.Router();
+
 const db = require('../model/DataStore')
 
-router1.post('/registration',async (req,res)=>{ 
+const router1 = express.Router().post('/registration',async (req,res)=>{ 
+    console.log("router initialized");
     console.log(req.body);
     db.create({
                Firstname:req.body.Firstname,
